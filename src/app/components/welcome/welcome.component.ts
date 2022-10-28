@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent implements OnInit {
-  name = 'Majd'; //Change this with your name :)
+  name = 'Zoltan Beke'; //Change this with your name :)
 
   constructor() {}
 
