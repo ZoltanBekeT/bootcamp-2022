@@ -1,0 +1,34 @@
+<!-- <div class="menu-container">
+  <div class="logo-container">
+    <p>LOGO</p>
+  </div>
+  <div class="actions-container">
+    <p>Cars</p>
+    <p>Add new car</p>
+  </div>
+</div> -->
+<div class="search-bar-container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <input
+      id="searchText"
+      name="searchText"
+      formControlName="searchText"
+      type="text"
+      placeholder="Search/Filter Cars"
+      onfocus="this.placeholder = ''"
+      onblur="this.placeholder = 'Search/Filter Cars'"
+    />
+  </form>
+</div>
+<div class="match-amount-container">
+  <p>{{ (carList$ | async)?.length }} Matches Found</p>
+</div>
+<div class="car-cards-container">
+  <ng-container *ngFor="let car of carList$ | async">
+    <app-car-card
+      [titleInput]="car.model"
+      [contentInput]="car.description"
+      [yearInput]="car.firstRegistration"
+    ></app-car-card>
+  </ng-container>
+</div>

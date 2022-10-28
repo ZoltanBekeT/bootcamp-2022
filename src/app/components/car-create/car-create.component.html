@@ -1,0 +1,55 @@
+<div class="form-group">
+  <form [formGroup]="addCarForm" (ngSubmit)="onSubmit()">
+    <div class="model-input">
+      <label for="model">Model*</label>
+      <input
+        [class.is-invalid]="model.touched && model.invalid"
+        class="form-control"
+        id="model"
+        name="model"
+        type="text"
+        formControlName="model"
+        placeholder="Enter model name"
+        required
+      />
+      <p class="invalid-feedback" *ngIf="model.touched && model.hasError('required')">*Model name required</p>
+    </div>
+    <div class="firstRegistration-input">
+      <label for="firstRegistration">First Registration*</label>
+      <input
+        [class.is-invalid]="firstRegistration.touched && firstRegistration.invalid"
+        class="form-control"
+        id="firstRegistration"
+        name="firstRegistration"
+        type="text"
+        formControlName="firstRegistration"
+        placeholder="DD-MM-YYYY"
+        required
+      />
+      <p class="invalid-feedback" *ngIf="firstRegistration.touched && firstRegistration.hasError('required')">
+        *First Registration required
+      </p>
+      <p class="invalid-feedback" *ngIf="firstRegistration.touched && firstRegistration.hasError('pattern')">
+        *First registration must be in form DD-MM-YYYY
+      </p>
+    </div>
+    <div class="origin-input">
+      <label for="origin">First Registration*</label>
+      <input
+        [class.is-invalid]="origin.touched && origin.invalid"
+        class="form-control"
+        id="origin"
+        name="origin"
+        type="text"
+        formControlName="origin"
+        placeholder='"GERMANY", "USA" or "OTHER"'
+        required
+      />
+      <p class="invalid-feedback" *ngIf="origin.touched && origin.hasError('required')">*Origin required</p>
+      <p class="invalid-feedback" *ngIf="origin.touched && origin.hasError('pattern')">
+        *Origin must be "GERMANY", "USA" or "OTHER"
+      </p>
+    </div>
+    <button class="btn btn-danger" type="submit" [disabled]="!addCarForm.valid">Add Car</button>
+  </form>
+</div>

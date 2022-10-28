@@ -1,0 +1,29 @@
+/* .menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+
+/* .actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+} */
+
+.search-bar-container, .match-amount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.car-cards-container {
+  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
